@@ -1,0 +1,7 @@
+/*usage  @include font-size(13);*/
+@mixin font($ff, $fz, $fw, $fc) {
+  font-family: $ff;
+  font-size: $fz;
+  font-weight: $fw;
+  color: $fc;
+}
