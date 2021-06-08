@@ -1,0 +1,177 @@
+//Имена классов:
+///* Слайдер */
+//.slick-slider{}
+///* Слайдер запущен */
+//.slick-slider.slick-initialized{}
+///* Слайдер с точками */
+//.slick-slider.slick-dotted{}
+///* Ограничивающая оболочка */
+//.slick-list {}
+///* Лента слайдов */
+//.slick-track{}
+///* Слайд */
+//.slick-slide{}
+///* Слайд активный (показывается) */
+//.slick-slide.slick-active{}
+///* Слайд основной */
+//.slick-slide.slick-current{}
+///* Слайд по центру */
+//.slick-slide.slick-center{}
+///* Клонированный слайд */
+//.slick-slide.slick-cloned{}
+///* Стрелка */
+//.slick-arrow{}
+///* Стрелка влево */
+//.slick-arrow.slick-prev{}
+///* Стрелка вправо */
+//.slick-arrow.slick-next{}
+///* Стрелка не активная */
+//.slick-arrow.slick-disabled{}
+///* Точки (булиты) */
+//.slick-dots{}
+//.slick-dots li{}
+///* Активная точка */
+//.slick-dots li.slick-active{}
+///* Элемент точки */
+//Мой слайдер
+
+#sliderslik {
+    max-width: 100%;
+    background: url("../images/sliderfon.png") 0 0 / 100% 100% no-repeat;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.slick-track {
+    display: flex;
+    margin: 0 10% 0 10%;
+}
+.slick-list {
+    overflow: hidden;
+}
+
+////.slide {
+////    display: block;
+////    width: 1000px;
+//}
+.slick-arrow {
+    position: absolute;
+    bottom: calc(50% - 36px);
+    z-index: 10;
+    font-size: 0;
+    height: 72px;
+    width: 24px;
+    border: 0;
+}
+
+.slick-arrow.slick-prev {
+    background: url("../images/arrowleft.png") 0 0 / 100% no-repeat;
+    left: 0;
+    margin-left: 10%;
+}
+.slick-arrow.slick-next {
+    background: url("../images/arrowright.png") 0 0 / 100% no-repeat;
+    right: 0;
+    margin-right: 10%;
+}
+
+//Текст на слайдере
+.basket {
+    height: 50%;
+    margin-top: 200px;
+    margin-left: 10%;
+}
+
+.pfon {
+    position: relative;
+    max-width: 100%;
+    height: 90%;
+    margin-top: 20px;
+}
+
+.baneronslider {
+    display: block;
+    position: absolute;
+    bottom: 30%;
+    overflow: visible;
+    left: 60%;
+    & h1 {
+        @include font($font-2, 26px, bold, #ffffff);
+        margin: 0px 0px 15px 0px;
+    }
+    & p {
+        @include font($font-1, 16px, 400, #ffffff);
+        line-height: 30px;
+        margin-bottom: 20px;
+        width: 60%;
+    }
+
+    //сылка
+    .borderblu {
+        display: flex;
+        max-height: 40px;
+        max-width: 170px;
+        background-color: #5094f2;
+        & img {
+            max-height: 25px;
+            max-width: 25px;
+            fill: rgb(248, 248, 248);
+            margin: 9px 11px;
+        }
+        & a {
+            @include font($font-1, 22px, 300, #ffffff);
+            margin: 6px 0px 0px 0px;
+        }
+    }
+}
+
+//Дать настройки изображению для маштабирования
+@media (max-width: 767px) {
+    #sliderslik {
+        max-width: 100%;
+        max-height: 250px;
+        background: url("../images/foonresponsiv.png") 0 0 / 100% 100% no-repeat;
+        margin-bottom: 0;
+    }
+    .pfon {
+        margin-top: 20px;
+        max-height: 213px;
+    }
+    .basket {
+        margin-top: 100px;
+        max-height: 120px;
+    }
+    .slick-track {
+        display: flex;
+        margin: 0 0% 0 0%;
+        overflow: hidden;
+        margin-left: 3%;
+    }
+    .slick-arrow.slick-prev,
+    .slick-arrow.slick-next {
+        display: none;
+        background: none;
+    }
+
+    .baneronslider {
+        bottom: 0;
+        margin-bottom: 30px;
+        & h1 {
+            font-size: 20px;
+        }
+        & p {
+            font-size: 15px;
+        }
+        @media (max-width: 450px) {
+            & h1,
+            p {
+                line-height: 20px;
+                margin-bottom: 10px;
+            }
+            & .borderblu a {
+                font-size: 17px;
+            }
+        }
+    }
+}

@@ -22,20 +22,19 @@ header {
 		position: relative;
 		max-width: 100%;
 		max-height: 100%;
-		margin: 17px 0px 21px 0px;
+		margin: 17px 0px 21px 10px;
 	}
 	.navigation {
-		//padding-left: 40%;
 		display: block;
 		position: relative;
 		width: 40%;
 		& ul {
 			width: 100%;
-			margin-top: 40px;
+			margin: 40px 0px 0px 0px;
 			display: flex;
 			justify-content: space-between;
 			li {
-				margin: 0px 0px 0px 0px;
+				margin: 0 15px 0 0;
 				&::after {
 					display: block;
 					content: "";
@@ -50,55 +49,73 @@ header {
 				}
 				a {
 					@include font($font-1, 20px, 400, #6c6c6c);
+					padding: 15px 0px;
 				}
 			}
 		}
 	}
-	@media (max-width: 767px) {
-		.navigation {
+}
+@media (max-width: 767px) {
+	.logo {
+		margin-left: 3%;
+	}
+	.navigation {
+		display: block;
+		position: absolute;
+		right: 0;
+		margin: 20px 27px 18px 0;
+		& .burger {
 			display: block;
 			position: absolute;
+			height: 44px;
+			width: 58px;
+			z-index: 5;
+			background-image: url("../images/burger.png");
 			right: 0;
-			margin: 20px 27px 18px 0;
-			& .burger {
-				display: block;
-				position: absolute;
-				height: 44px;
-				width: 58px;
-				z-index: 5;
-				background-image: url(/images/burger.png);
-				right: 0;
-			}
-			& .menu {
-				width: 100%;
+		}
+		& .menu {
+			width: 45%;
+			display: block;
+			position: absolute;
+			text-align: right;
+			z-index: 10;
+			right: -100%;
+			transition: all 0.3s ease 0s;
+			overflow: hidden;
+
+			& ul {
 				display: block;
 				position: absolute;
 				text-align: right;
 				z-index: 10;
-				right: -100%;
-				transition: all 0.3s ease 0s;
-				overflow: hidden;
-				& ul {
-					display: block;
-					position: absolute;
-					text-align: right;
-					z-index: 10;
-				}
-				& li {
-					margin: 10px 0px 0px 0px;
+				background: #5094f2;
+				margin-top: 45px;
+				border: 1px solid white;
+				border-radius: 50% 0 0 30%;
+			}
+			& li {
+				display: inline-block;
+				max-width: 100%;
+				margin: 10px 5px 0px 0px;
 
-					&:hover::after {
-						opacity: 0;
-					}
-					& a {
-						@include font($font-1, 24px, 700, #5094f2);
+				&:hover::after {
+					max-width: 100%;
+					opacity: 1;
+					background-color: #ffffff;
+				}
+				& a {
+					@include font($font-1, 24px, 700, #ffffff);
+				}
+				@media (max-width: 550px) {
+					a {
+						font-size: 15px;
 					}
 				}
 			}
-			& .menu.active {
-				right: 0;
-				overflow: visible;
-			}
+		}
+		& .menu.active {
+			right: 0;
+			overflow: visible;
 		}
 	}
 }

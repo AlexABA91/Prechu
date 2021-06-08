@@ -1,0 +1,55 @@
+#infofild {
+    max-width: 971px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 200px;
+}
+.basketimg {
+    display: block;
+    position: relative;
+    margin-right: 85px;
+    h1 {
+        text-align: center;
+        @include font($font-2, 2.6em, 400, #6f7173);
+        margin-bottom: 42px;
+    }
+}
+.textfid {
+    h2 {
+        @include font($font-2, 1.45em, 400, #6f7173);
+        margin: 55px 0 35px 0;
+    }
+    p {
+        @include font($font-2, 0.95em, 300, #9b9d9e);
+        line-height: 36px;
+        margin-right: 50px;
+    }
+}
+@media (max-width: 767px) {
+    #infofild {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .basketimg {
+        display: block;
+        margin: 0 auto;
+    }
+    .textfid {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        p {
+            margin-right: 0;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .basketimg img {
+        max-width: 250px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}

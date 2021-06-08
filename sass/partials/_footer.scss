@@ -1,6 +1,18 @@
 footer {
 	display: block;
-	width: 100%;
-	margin: 0 0 0;
-	padding: 0 0 0;
+	height: 100px;
+	max-width: 100%;
+	border-top: 1px solid #e5e5e5;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	span {
+		@include font($font-1, 0.9em, 300, #979797);
+	}
+}
+@media (max-width: 767px) {
+	footer {
+		height: 50px;
+	}
 }
